@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav"
+    app:startDestination="@id/splash_Screen">
+
+    <fragment
+        android:id="@+id/splash_Screen"
+        android:name="com.example.foody.Splash_Screen"
+        android:label="fragment_splash_screen"
+        tools:layout="@layout/fragment_splash_screen" >
+        <action
+            android:id="@+id/action_splash_Screen_to_onBord"
+            app:destination="@id/onBord"
+            app:popUpTo="@id/splash_Screen"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/auth"
+        android:name="com.example.foody.Auth"
+        android:label="fragment_auth"
+        tools:layout="@layout/fragment_auth" />
+    <fragment
+        android:id="@+id/onBord"
+        android:name="com.example.foody.OnBord"
+        android:label="fragment_on_bord"
+        tools:layout="@layout/fragment_on_bord" >
+        <action
+            android:id="@+id/action_onBord_to_auth"
+            app:destination="@id/auth" />
+    </fragment>
+</navigation>

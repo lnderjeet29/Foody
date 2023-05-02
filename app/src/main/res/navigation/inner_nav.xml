@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/inner_nav"
+    app:startDestination="@id/home_Page">
+
+    <fragment
+        android:id="@+id/accountFragment"
+        android:name="com.example.foody.AccountFragment"
+        android:label="fragment_account"
+        tools:layout="@layout/fragment_account" >
+        <action
+            android:id="@+id/action_accountFragment_to_order"
+            app:destination="@id/order" />
+        <action
+            android:id="@+id/action_accountFragment_to_aboutUs"
+            app:destination="@id/aboutUs" />
+    </fragment>
+    <fragment
+        android:id="@+id/cartFragment"
+        android:name="com.example.foody.CartFragment"
+        android:label="fragment_cart"
+        tools:layout="@layout/fragment_cart" >
+        <action
+            android:id="@+id/action_cartFragment_to_favFragment2"
+            app:destination="@id/favFragment" />
+        <action
+            android:id="@+id/action_cartFragment_to_itemDetailShow"
+            app:destination="@id/itemDetailShow" />
+    </fragment>
+    <fragment
+        android:id="@+id/exploreFragment"
+        android:name="com.example.foody.ExploreFragment"
+        android:label="fragment_explore"
+        tools:layout="@layout/fragment_explore" >
+        <action
+            android:id="@+id/action_exploreFragment_to_cartFragment2"
+            app:destination="@id/cartFragment" />
+        <action
+            android:id="@+id/action_exploreFragment_to_itemDetailShow"
+            app:destination="@id/itemDetailShow" />
+    </fragment>
+    <fragment
+        android:id="@+id/favFragment"
+        android:name="com.example.foody.FavFragment"
+        android:label="fragment_fav"
+        tools:layout="@layout/fragment_fav" >
+        <action
+            android:id="@+id/action_favFragment_to_accountFragment"
+            app:destination="@id/accountFragment" />
+        <action
+            android:id="@+id/action_favFragment_to_itemDetailShow"
+            app:destination="@id/itemDetailShow" />
+    </fragment>
+    <fragment
+        android:id="@+id/home_Page"
+        android:name="com.example.foody.Home_Page"
+        android:label="fragment_home__page"
+        tools:layout="@layout/fragment_home__page" >
+        <action
+            android:id="@+id/action_home_Page_to_exploreFragment2"
+            app:destination="@id/exploreFragment" />
+        <action
+            android:id="@+id/action_home_Page_to_itemDetailShow"
+            app:destination="@id/itemDetailShow" />
+    </fragment>
+    <fragment
+        android:id="@+id/itemDetailShow"
+        android:name="com.example.foody.ItemDetailShow"
+        android:label="fragment_item_detail_show"
+        tools:layout="@layout/fragment_item_detail_show" >
+        <argument
+            android:name="Food_id"
+            app:argType="string" />
+        <argument
+            android:name="count"
+            app:argType="integer" />
+    </fragment>
+    <fragment
+        android:id="@+id/order"
+        android:name="com.example.foody.Order"
+        android:label="fragment_order"
+        tools:layout="@layout/fragment_order" />
+    <fragment
+        android:id="@+id/aboutUs"
+        android:name="com.example.foody.AboutUs"
+        android:label="fragment_about_us"
+        tools:layout="@layout/fragment_about_us" />
+</navigation>
